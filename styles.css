@@ -1,4 +1,19 @@
 body {
-    background-color: #180000;
-    color: grey;
+    background-color: lightblue;
+    color: darkblue;
+}
+
+.container {
+    padding: 100px;
+    padding-top: 20px;
+}
+
+.image_container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.image_container img {
+    width: 65%;
 }

@@ -1,47 +1,18 @@
-<!doctype html>
-<html>
-  <head>
-    <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
-  </head>
-
-  <body>
-    <p>
-      You can execute any Python code. Just enter something in the box below and
-      click the button.
-    </p>
-    <input id="code" value="sum([1, 2, 3, 4, 5])" />
-    <button onclick="evaluatePython()">Run</button>
-    <br />
-    <br />
-    <div>Output:</div>
-    <textarea id="output" style="width: 100%;" rows="6" disabled></textarea>
-
-    <script>
-      const output = document.getElementById("output");
-      const code = document.getElementById("code");
-
-      function addToOutput(s) {
-        output.value += ">>>" + code.value + "\n" + s + "\n";
-      }
-
-      output.value = "Initializing...\n";
-      // init Pyodide
-      async function main() {
-        let pyodide = await loadPyodide();
-        output.value += "Ready!\n";
-        return pyodide;
-      }
-      let pyodideReadyPromise = main();
-
-      async function evaluatePython() {
-        let pyodide = await pyodideReadyPromise;
-        try {
-          let output = pyodide.runPython(code.value);
-          addToOutput(output);
-        } catch (err) {
-          addToOutput(err);
-        }
-      }
-    </script>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Testing Gound</title>
+</head>
+<body>
+<div class="container">
+  <h1>Testing Grounds</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni impedit blanditiis iusto error, non mollitia fuga quam labore culpa placeat nemo sequi ipsam veniam voluptatem beatae? Distinctio iure soluta ea. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error nam accusamus doloribus commodi perspiciatis praesentium quia pariatur, ab quo in enim officiis quae a. Aperiam assumenda veritatis dignissimos tenetur amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, beatae! Amet est perspiciatis omnis voluptatem earum eius id saepe temporibus veritatis eum animi ullam quidem quod fuga, veniam quo. Aspernatur.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni impedit blanditiis iusto error, non mollitia fuga quam labore culpa placeat nemo sequi ipsam veniam voluptatem beatae? Distinctio iure soluta ea. Lorem ipsum dolor sit amet consectetur adipisicing elit. Error nam accusamus doloribus commodi perspiciatis praesentium quia pariatur, ab quo in enim officiis quae a. Aperiam assumenda veritatis dignissimos tenetur amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, beatae! Amet est perspiciatis omnis voluptatem earum eius id saepe temporibus veritatis eum animi ullam quidem quod fuga, veniam quo. Aspernatur.</p>
+  <div class="image_container"><img src="loading.jpg" alt="Loading icon"></div>
+</div>
+  <script src="myscript.js"></script>
+</body>
 </html>
